@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roundoff | Definitely_Andrew</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .roundoff-page { max-width: 880px; margin: 0 auto; padding: 36px 32px 84px; }
+        .project-back { display: inline-flex; margin-bottom: 30px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; transition: color .2s; }
+        .project-back:hover { color: #fff; }
+        .roundoff-hero { position: relative; overflow: hidden; min-height: 330px; padding: 52px; border: 1px solid rgba(103,232,249,.22); border-radius: 24px; background: radial-gradient(circle at 70% 30%, rgba(34,211,238,.22), transparent 33%), radial-gradient(circle at 25% 95%, rgba(124,58,237,.34), transparent 45%), #090b1d; }
+        .roundoff-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(125deg, transparent 25%, rgba(255,255,255,.035), transparent 60%); pointer-events: none; }
+        .roundoff-brand { position: relative; z-index: 1; max-width: 510px; }
+        .roundoff-mark { display: block; width: 86px; height: 86px; margin-bottom: 26px; object-fit: contain; filter: drop-shadow(0 16px 26px rgba(0,0,0,.35)); }
+        .roundoff-brand h1 { margin: 0 0 14px; color: #fff; font-size: clamp(2.2rem, 7vw, 4.8rem); letter-spacing: -.055em; line-height: .96; }
+        .roundoff-brand p { max-width: 470px; color: #b7bed9; font-size: 16px; line-height: 1.7; }
+        .project-meta { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 9px; margin-top: 28px; }
+        .meta-pill { border: 1px solid rgba(255,255,255,.14); border-radius: 999px; padding: 6px 11px; color: #c4d0ed; background: rgba(5,8,22,.36); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .project-section { margin-top: 52px; }
+        .project-section h2 { margin-bottom: 14px; color: #fff; font-size: 18px; letter-spacing: -.02em; }
+        .project-section > p { color: var(--muted); font-size: 15px; line-height: 1.8; }
+        .features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+        .feature { padding: 20px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface); }
+        .feature h3 { margin-bottom: 7px; color: #fff; font-size: 14px; }
+        .feature p { color: var(--muted); font-size: 13px; line-height: 1.65; }
+        .status { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; color: #87f5d1; font-size: 12px; font-weight: 600; }
+        .status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 12px #34d399; }
+        @media (max-width: 640px) { .roundoff-page { padding: 24px 16px 64px; } .roundoff-hero { min-height: 300px; padding: 34px 26px; } .features { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="navbar-wrap"><nav><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="projects.html" class="nav-active">Projects</a></li><li><a href="about.html">About</a></li></ul></nav></div>
+    <main class="roundoff-page">
+        <a class="project-back" href="projects.html">← All projects</a>
+        <section class="roundoff-hero">
+            <div class="roundoff-brand"><img class="roundoff-mark" src="assets/roundoff-logo.png" alt="Roundoff app icon"><h1>Roundoff</h1><p>A dynamic notch for Mac, with elegant widgets for the desktop and lock screen.</p></div>
+            <div class="project-meta"><span class="meta-pill">macOS</span><span class="meta-pill">Website</span><span class="meta-pill">Version 1.0.11 · Beta</span><span class="meta-pill">Active development</span></div>
+        </section>
+        <section class="project-section"><h2>About the project</h2><p>Roundoff turns the space around your Mac’s notch into a helpful everyday hub. It brings music, calendar events, reminders, weather and connected-device information closer at hand, while also offering polished widgets away from the notch.</p></section>
+        <section class="project-section"><h2>What it includes</h2><div class="features">
+            <article class="feature"><h3>Now playing</h3><p>Playback controls, album artwork, a visualizer and synced lyrics when they are available.</p></article>
+            <article class="feature"><h3>Stay on schedule</h3><p>Upcoming calendar events and reminders displayed right where they are easy to notice.</p></article>
+            <article class="feature"><h3>Everyday signals</h3><p>Weather, battery and Bluetooth-device updates in a compact, glanceable format.</p></article>
+            <article class="feature"><h3>Beyond the notch</h3><p>Customizable desktop and lock-screen widgets, plus a camera mirror and handy system controls.</p></article>
+        </div></section>
+    </main>
+    <footer><p>© 2026 Definitely_Andrew · All rights reserved</p></footer>
+    <script src="js/version.js"></script>
+</body>
+</html>

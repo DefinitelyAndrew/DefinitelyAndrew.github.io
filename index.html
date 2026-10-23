@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Definitely_Andrew</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .hero-typing {
+            white-space: nowrap;
+        }
+        .hero-typing::after {
+            content: '';
+            display: inline-block;
+            height: 1em;
+            margin-left: 3px;
+            border-right: 2px solid currentColor;
+            vertical-align: -0.1em;
+            animation: typing-caret 0.8s steps(1) infinite;
+        }
+        @keyframes typing-caret {
+            50% { border-color: transparent; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-typing::after { animation: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar-wrap">
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html" class="nav-active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 9.75L12 3l9 6.75V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.75z"/>
+                            <path d="M9 22V12h6v10"/>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                        </svg>
+                        About
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+
+        <div class="hero-content">
+            <h1>
+                Hi, I'm<br>
+                <span class="gradient-text">Definitely_Andrew</span>
+            </h1>
+            <p>
+                Welcome to my corner of the internet. This is where I experiment with my things.
+                You can <span class="hero-typing" id="heroTyping">browse my projects</span>
+            </p>
+            <div class="hero-buttons">
+                <a href="projects.html" class="btn-primary">View Projects →</a>
+                <a href="about.html" class="btn-secondary">About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Definitely_Andrew · All rights reserved</p>
+    </footer>
+
+    <script src="js/version.js"></script>
+    <script>
+        const typingElement = document.getElementById('heroTyping');
+        const typingPhrases = [
+            'browse my projects',
+            'learn about me',
+            "see what i'm doing",
+            'just look around'
+        ];
+
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            let phraseIndex = 0;
+            let characterIndex = typingPhrases[0].length;
+            let deleting = true;
+
+            function typeNextPhrase() {
+                const phrase = typingPhrases[phraseIndex];
+                typingElement.textContent = phrase.slice(0, characterIndex);
+
+                if (deleting) {
+                    characterIndex--;
+                    if (characterIndex < 0) {
+                        deleting = false;
+                        phraseIndex = (phraseIndex + 1) % typingPhrases.length;
+                        characterIndex = 0;
+                        setTimeout(typeNextPhrase, 350);
+                        return;
+                    }
+                    setTimeout(typeNextPhrase, 45);
+                    return;
+                }
+
+                characterIndex++;
+                if (characterIndex > typingPhrases[phraseIndex].length) {
+                    deleting = true;
+                    setTimeout(typeNextPhrase, 1600);
+                    return;
+                }
+                setTimeout(typeNextPhrase, 80);
+            }
+
+            setTimeout(typeNextPhrase, 1600);
+        }
+    </script>
+</body>
+</html>

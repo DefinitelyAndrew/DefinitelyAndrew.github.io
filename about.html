@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Definitely_Andrew</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @media (max-width: 480px) {
+            .about-card-value { font-size: 15px; }
+            .lang-name, .lang-pct { font-size: 12px; }
+        }
+        .about-card-sub {
+            font-size: 13px;
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+        .activity-status {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 4px 0 14px;
+        }
+        .activity-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .activity-item + .activity-item {
+            border-top: 1px solid var(--border);
+            margin-top: 16px;
+            padding-top: 16px;
+        }
+        .activity-icon {
+            width: 48px;
+            height: 48px;
+            flex: 0 0 48px;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            border-radius: 10px;
+            background: rgba(255,255,255,.06);
+            color: var(--muted);
+            font-size: 22px;
+        }
+        .activity-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .activity-app {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 3px;
+        }
+        .activity-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+        .activity-context {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 3px;
+        }
+        .activity-detail {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 3px;
+        }
+        .activity-track-progress {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin: 10px 0;
+            font-size: 10px;
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+        }
+        .activity-progress-track {
+            height: 4px;
+            flex: 1;
+            overflow: hidden;
+            border-radius: 9999px;
+            background: rgba(255,255,255,.12);
+        }
+        .activity-progress-fill {
+            width: 0;
+            height: 100%;
+            border-radius: inherit;
+            background: #1ed760;
+        }
+        .activity-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .activity-button {
+            display: inline-flex;
+            align-items: center;
+            font: 600 12px Montserrat, sans-serif;
+            color: var(--text);
+            background: rgba(255,255,255,.05);
+            border: 1px solid var(--border);
+            border-radius: 9999px;
+            padding: 8px 14px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background .2s, border-color .2s;
+        }
+        .activity-button:hover:not(:disabled) {
+            background: rgba(255,255,255,.1);
+            border-color: var(--border-hover);
+        }
+        .activity-button:disabled {
+            cursor: not-allowed;
+            opacity: .5;
+        }
+        .activity-note {
+            margin-top: 10px;
+            font-size: 11px;
+            line-height: 1.5;
+            color: var(--muted);
+        }
+        .discord-row {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 4px;
+        }
+        .discord-field-label {
+            font-size: 11px;
+            font-weight: 600;
+            opacity: 0.45;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 3px;
+        }
+        .discord-field-value {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .copy-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 6px;
+            color: inherit;
+            opacity: 0.4;
+            transition: opacity 0.2s, background 0.2s;
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .copy-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+        .copy-btn:hover {
+            opacity: 0.9;
+            background: rgba(255,255,255,0.08);
+        }
+        .copy-btn.copied {
+            opacity: 1;
+            color: #48c774;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar-wrap">
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 9.75L12 3l9 6.75V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.75z"/>
+                            <path d="M9 22V12h6v10"/>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                        </svg>
+                        About
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+        <div class="about-container">
+
+            <!-- Country -->
+            <div class="about-card">
+                <div class="about-card-label">Country</div>
+                <div class="about-card-value">
+                    <span class="flag">🇸🇬</span> Singapore
+                </div>
+            </div>
+
+            <!-- Local Time -->
+            <div class="about-card">
+                <div class="about-card-label">Local Time</div>
+                <div class="about-card-value" id="sgClock">—</div>
+                <div class="about-card-sub" id="sgDate">—</div>
+            </div>
+
+            <!-- Likes & Interests -->
+            <div class="about-card">
+                <div class="about-card-label">Likes &amp; Interests</div>
+                <div class="interests-list">
+                    <span class="interest-tag">🎨 Designing</span>
+                    <span class="interest-tag">🎮 Creating Games</span>
+                    <span class="interest-tag">😴 Sleeping</span>
+                </div>
+            </div>
+
+            <!-- Discord -->
+            <div class="about-card">
+                <div class="about-card-label">Discord</div>
+                <div class="discord-row">
+                    <div class="discord-field">
+                        <span class="discord-field-label">Username</span>
+                        <div class="discord-field-value">
+                            <span id="discordUsername">papaya69.</span>
+                            <button class="copy-btn" aria-label="Copy username" onclick="copyText('discordUsername', this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="discord-field">
+                        <span class="discord-field-label">User ID</span>
+                        <div class="discord-field-value">
+                            <span id="discordId">1118354685812822077</span>
+                            <button class="copy-btn" aria-label="Copy user ID" onclick="copyText('discordId', this)">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="9" y="9" width="13" height="13" rx="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube -->
+            <div class="about-card">
+                <div class="about-card-label">YouTube</div>
+                <div class="about-card-value">
+                    <a href="https://www.youtube.com/@definitely_andrew" target="_blank" rel="noopener noreferrer">@definitely_andrew</a>
+                </div>
+            </div>
+
+            <!-- My Activity -->
+            <div class="about-card">
+                <div class="about-card-label">My Activity</div>
+                <div class="activity-list" id="activityList" aria-live="polite">
+                    <div class="activity-status">
+                        <div class="activity-icon" aria-hidden="true">…</div>
+                        <div>
+                            <div class="activity-app">Discord activity</div>
+                            <div class="activity-title">Loading activity…</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="activity-note">Activities are taken from Discord. Want to do the same? Use Lanyard.</p>
+            </div>
+
+            <!-- Language Proficiency -->
+            <div class="about-card">
+                <div class="about-card-label">Language Proficiency</div>
+                <div class="lang-list">
+
+                    <div class="lang-item">
+                        <div class="lang-header">
+                            <span class="lang-name">English</span>
+                            <span class="lang-pct">100%</span>
+                        </div>
+                        <div class="lang-bar-bg">
+                            <div class="lang-bar-fill" style="--pct: 100%"></div>
+                        </div>
+                    </div>
+
+                    <div class="lang-item">
+                        <div class="lang-header">
+                            <span class="lang-name">Chinese</span>
+                            <span class="lang-pct">94%</span>
+                        </div>
+                        <div class="lang-bar-bg">
+                            <div class="lang-bar-fill" style="--pct: 94%"></div>
+                        </div>
+                    </div>
+
+                    <div class="lang-item">
+                        <div class="lang-header">
+                            <span class="lang-name">Vietnamese</span>
+                            <span class="lang-pct">62%</span>
+                        </div>
+                        <div class="lang-bar-bg">
+                            <div class="lang-bar-fill" style="--pct: 62%"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Definitely_Andrew · All rights reserved</p>
+    </footer>
+
+    <script src="js/version.js"></script>
+    <script>
+        // ── COPY TO CLIPBOARD ──
+        function copyText(elementId, btn) {
+            const text = document.getElementById(elementId).textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.classList.add('copied');
+                btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
+                }, 1800);
+            });
+        }
+
+        // ── DISCORD ACTIVITY ──
+        const LANYARD_USER_ID = '1118354685812822077';
+        const activityList = document.getElementById('activityList');
+        let displayedActivities = [];
+        let lanyardSocket;
+        let lanyardHeartbeat;
+
+        function setActivityMessage(app, title, detail, icon = '…') {
+            const status = document.createElement('div');
+            status.className = 'activity-status';
+            const iconElement = document.createElement('div');
+            iconElement.className = 'activity-icon';
+            iconElement.setAttribute('aria-hidden', 'true');
+            iconElement.textContent = icon;
+            const content = document.createElement('div');
+            const appElement = document.createElement('div');
+            appElement.className = 'activity-app';
+            appElement.textContent = app;
+            const titleElement = document.createElement('div');
+            titleElement.className = 'activity-title';
+            titleElement.textContent = title;
+            const detailElement = document.createElement('div');
+            detailElement.className = 'activity-detail';
+            detailElement.textContent = detail;
+            content.append(appElement, titleElement, detailElement);
+            status.append(iconElement, content);
+            activityList.replaceChildren(status);
+            displayedActivities = [];
+        }
+
+        function formatActivityDuration(milliseconds) {
+            const totalSeconds = Math.max(0, Math.floor(milliseconds / 1000));
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            return hours
+                ? `${hours}h ${minutes.toString().padStart(2, '0')}m`
+                : `${minutes}m ${seconds.toString().padStart(2, '0')}s`;
+        }
+
+        function appLabel(name) {
+            const normalized = name.toLowerCase();
+            if (normalized.includes('visual studio code') || normalized.includes('vs code')) return 'Visual Studio Code';
+            if (normalized.includes('roblox studio')) return 'Roblox Studio';
+            if (normalized.includes('roblox')) return 'Roblox';
+            if (normalized.includes('spotify')) return 'Spotify';
+            if (normalized.includes('youtube music') || normalized.includes('yt music')) return 'YouTube Music';
+            if (normalized.includes('capcut')) return 'CapCut';
+            if (normalized.includes('freeform')) return 'Freeform';
+            if (/\b(word|powerpoint|excel|outlook|onenote|teams|onedrive)\b/.test(normalized)
+                || normalized.includes('microsoft')) {
+                return name;
+            }
+            return null;
+        }
+
+        function activityImageUrl(activity, spotify) {
+            if (activity.name.toLowerCase().includes('spotify') && spotify?.album_art_url) {
+                return spotify.album_art_url;
+            }
+            const image = activity.assets?.large_image || activity.assets?.small_image;
+            if (!image) return null;
+            if (/^https?:\/\//i.test(image)) return image;
+            if (image.startsWith('mp:external/')) {
+                return `https://media.discordapp.net/external/${image.slice('mp:external/'.length)}`;
+            }
+            return activity.application_id
+                ? `https://cdn.discordapp.com/app-assets/${activity.application_id}/${image}.png`
+                : null;
+        }
+
+        function activityFallbackIcon(app) {
+            if (app === 'Visual Studio Code') return '</>';
+            if (app === 'Spotify' || app === 'YouTube Music') return '♪';
+            if (app === 'CapCut' || app === 'Freeform') return '✦';
+            if (app.startsWith('Microsoft') || /\b(word|powerpoint|excel|outlook|onenote|teams|onedrive)\b/i.test(app)) return '▤';
+            return '🎮';
+        }
+
+        function createActivityElement(activity, spotify) {
+            const article = document.createElement('article');
+            article.className = 'activity-item';
+
+            const status = document.createElement('div');
+            status.className = 'activity-status';
+            const icon = document.createElement('div');
+            icon.className = 'activity-icon';
+            icon.setAttribute('aria-hidden', 'true');
+            const fallbackIcon = activityFallbackIcon(activity.app);
+            icon.textContent = fallbackIcon;
+            const imageUrl = activityImageUrl(activity.source, spotify);
+            if (imageUrl) {
+                const image = document.createElement('img');
+                image.src = imageUrl;
+                image.alt = '';
+                image.onerror = () => icon.replaceChildren(document.createTextNode(fallbackIcon));
+                icon.replaceChildren(image);
+            }
+
+            const content = document.createElement('div');
+            const appElement = document.createElement('div');
+            appElement.className = 'activity-app';
+            appElement.textContent = activity.app;
+            const titleElement = document.createElement('div');
+            titleElement.className = 'activity-title';
+            titleElement.textContent = activity.title;
+            if (activity.context) {
+                const contextElement = document.createElement('div');
+                contextElement.className = 'activity-context';
+                contextElement.textContent = activity.context;
+                content.append(appElement, titleElement, contextElement);
+            } else {
+                content.append(appElement, titleElement);
+            }
+            const detailElement = document.createElement('div');
+            detailElement.className = 'activity-detail';
+            activity.detailElement = detailElement;
+            content.append(detailElement);
+            status.append(icon, content);
+            article.append(status);
+
+            if (activity.isSpotify && activity.start && activity.end) {
+                const progress = document.createElement('div');
+                progress.className = 'activity-track-progress';
+                progress.setAttribute('role', 'progressbar');
+                progress.setAttribute('aria-label', 'Song progress');
+                progress.setAttribute('aria-valuemin', '0');
+                progress.setAttribute('aria-valuemax', '100');
+                const elapsed = document.createElement('span');
+                const track = document.createElement('div');
+                track.className = 'activity-progress-track';
+                const progressFill = document.createElement('div');
+                progressFill.className = 'activity-progress-fill';
+                track.append(progressFill);
+                const remaining = document.createElement('span');
+                progress.append(elapsed, track, remaining);
+                article.append(progress);
+                activity.progressElements = { progress, progressFill, elapsed, remaining };
+            }
+
+            if (activity.isSpotify && spotify?.track_id) {
+                const actions = document.createElement('div');
+                actions.className = 'activity-actions';
+                const link = document.createElement('a');
+                link.className = 'activity-button';
+                link.href = `https://open.spotify.com/track/${encodeURIComponent(spotify.track_id)}`;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = 'Play on Spotify';
+                actions.append(link);
+                article.append(actions);
+            }
+
+            return article;
+        }
+
+        function updateActivityDurations() {
+            const now = Date.now();
+            for (const activity of displayedActivities) {
+                if (activity.progressElements) {
+                    const { progress, progressFill, elapsed, remaining } = activity.progressElements;
+                    const duration = activity.end - activity.start;
+                    const current = Math.min(Math.max(now, activity.start), activity.end);
+                    const percent = duration > 0 ? ((current - activity.start) / duration) * 100 : 0;
+                    progressFill.style.width = `${percent}%`;
+                    progress.setAttribute('aria-valuenow', String(Math.round(percent)));
+                    elapsed.textContent = formatActivityDuration(current - activity.start);
+                    remaining.textContent = `-${formatActivityDuration(activity.end - current)}`;
+                } else if (activity.start) {
+                    activity.detailElement.textContent = `Active for ${formatActivityDuration(now - activity.start)}`;
+                } else {
+                    activity.detailElement.textContent = 'Active now';
+                }
+            }
+        }
+
+        function showActivity(activities, spotify) {
+            const visibleActivities = [...activities];
+            if (spotify && !visibleActivities.some(item => item.name.toLowerCase().includes('spotify'))) {
+                visibleActivities.unshift({
+                    name: 'Spotify',
+                    details: spotify.song,
+                    state: spotify.artist,
+                    timestamps: spotify.timestamps
+                });
+            }
+            const supportedActivities = visibleActivities
+                .map(activity => ({ activity, app: appLabel(activity.name) }))
+                .filter(entry => entry.app);
+            if (supportedActivities.length === 0) {
+                setActivityMessage('', 'just chilling', '', '☕');
+                return;
+            }
+
+            displayedActivities = [];
+            const rendered = supportedActivities.map(({ activity, app }) => {
+                const isSpotify = app === 'Spotify';
+                const start = isSpotify
+                    ? (spotify?.timestamps?.start || activity.timestamps?.start || null)
+                    : (activity.timestamps?.start || null);
+                const end = isSpotify
+                    ? (spotify?.timestamps?.end || null)
+                    : (activity.timestamps?.end || null);
+                const title = isSpotify && spotify
+                    ? `${spotify.song} — ${spotify.artist}`
+                    : (activity.details || activity.state || `On ${app}`);
+                const context = app === 'Visual Studio Code' && activity.details && activity.state
+                    ? activity.state
+                    : null;
+                const entry = {
+                    app,
+                    title,
+                    context,
+                    start,
+                    end,
+                    isSpotify,
+                    detailElement: null,
+                    progressElements: null,
+                    source: activity
+                };
+                const element = createActivityElement(entry, spotify);
+                displayedActivities.push(entry);
+                return element;
+            });
+            activityList.replaceChildren(...rendered);
+            updateActivityDurations();
+        }
+
+        function handleLanyardPresence(presence) {
+            if (!presence || !Array.isArray(presence.activities)) {
+                setActivityMessage('Discord activity', 'No activity data available.', '', '☕');
+                return;
+            }
+            showActivity(presence.activities, presence.spotify);
+        }
+
+        function connectLanyard() {
+            lanyardSocket = new WebSocket('wss://api.lanyard.rest/socket');
+
+            lanyardSocket.addEventListener('open', () => {
+                setActivityMessage('Discord activity', 'Connecting…');
+            });
+
+            lanyardSocket.addEventListener('message', event => {
+                let message;
+                try {
+                    message = JSON.parse(event.data);
+                } catch {
+                    setActivityMessage('Discord activity', 'Received an invalid update.', '', '☕');
+                    return;
+                }
+
+                if (message.op === 1) {
+                    lanyardSocket.send(JSON.stringify({
+                        op: 2,
+                        d: { subscribe_to_id: LANYARD_USER_ID }
+                    }));
+                    clearInterval(lanyardHeartbeat);
+                    lanyardHeartbeat = setInterval(() => {
+                        if (lanyardSocket.readyState === WebSocket.OPEN) {
+                            lanyardSocket.send(JSON.stringify({ op: 3 }));
+                        }
+                    }, message.d.heartbeat_interval);
+                    return;
+                }
+
+                if (message.op !== 0) return;
+                if (message.t === 'INIT_STATE') {
+                    const presence = message.d?.[LANYARD_USER_ID] || message.d;
+                    handleLanyardPresence(presence);
+                } else if (message.t === 'PRESENCE_UPDATE') {
+                    handleLanyardPresence(message.d);
+                }
+            });
+
+            lanyardSocket.addEventListener('error', () => {
+                setActivityMessage('Discord activity', 'Activity connection unavailable.', '', '☕');
+            });
+
+            lanyardSocket.addEventListener('close', () => {
+                clearInterval(lanyardHeartbeat);
+                setActivityMessage('Discord activity', 'Reconnecting…', '', '☕');
+                setTimeout(connectLanyard, 5000);
+            });
+        }
+
+        connectLanyard();
+        setInterval(updateActivityDurations, 1000);
+
+        // ── LOCAL CLOCK ──
+        function updateSGClock() {
+            const now = new Date();
+
+            document.getElementById('sgClock').textContent = now.toLocaleTimeString('en-SG', {
+                timeZone: 'Asia/Singapore', hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true
+            });
+            document.getElementById('sgDate').textContent = now.toLocaleDateString('en-SG', {
+                timeZone: 'Asia/Singapore', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            });
+        }
+
+        // ── INIT ──
+        updateSGClock();
+        setInterval(updateSGClock, 1000);
+
+        window.addEventListener('load', () => {
+            const cards = document.querySelectorAll('.about-card');
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    cards.forEach((card, i) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                            card.querySelectorAll('.lang-bar-fill').forEach(bar => {
+                                bar.style.width = bar.style.getPropertyValue('--pct') || '0%';
+                            });
+                        }, i * 200);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

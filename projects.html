@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Definitely_Andrew</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* card content always visible on touch devices */
+        @media (hover: none) {
+            .card-content {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 480px) {
+            .page-header-inner { padding: 0 16px; }
+            .filter-bar-inner { padding: 8px 12px; }
+            .works-container { padding: 0 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar-wrap">
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 9.75L12 3l9 6.75V21a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.75z"/>
+                            <path d="M9 22V12h6v10"/>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="projects.html" class="nav-active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="3" y="3" width="7" height="7" rx="1"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1"/>
+                        </svg>
+                        Projects
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                        </svg>
+                        About
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- PAGE HEADER + SEARCH -->
+    <section class="page-header" id="works">
+        <div class="page-header-inner">
+            <div class="page-title-row">
+                <h2 class="page-title" id="filter-title">All Projects</h2>
+                <div class="search-wrapper">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search projects…">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STICKY FILTER + SORT BAR -->
+    <div class="filter-bar-wrap" id="filter-bar">
+        <div class="filter-bar-inner">
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="*">All</button>
+                <button class="filter-btn" data-filter="fiction">Fiction</button>
+                <button class="filter-btn" data-filter="nonfiction">Nonfiction</button>
+                <button class="filter-btn" data-filter="games">Games</button>
+                <button class="filter-btn" data-filter="apps">Apps</button>
+                <button class="filter-btn" data-filter="website">Website</button>
+            </div>
+            <div class="sort-wrapper">
+                <label for="sort-options">Sort:</label>
+                <select id="sort-options">
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="alphabetical">A–Z</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- CARD GRID -->
+    <section class="works-section">
+        <div class="works-container">
+            <div class="works-grid" id="works-grid">
+
+                <div class="card games nonfiction" data-date="2025-11-30" data-title="[SPCC] Singapore Punggol Coast Corporation">
+                    <img src="assets/spcc_thehubcover.png" alt="SPCC – Singapore Punggol Coast Corporation cover">
+                    <div class="card-content">
+                        <h3>[SPCC] Singapore Punggol Coast Corporation</h3>
+                        <a href="spcc.html" class="card-btn">→</a>
+                    </div>
+                </div>
+
+                <div class="card apps website" data-date="2026-10-23" data-title="Roundoff">
+                    <div class="roundoff-cover"><img src="assets/roundoff-logo.png" alt="Roundoff app icon"></div>
+                    <div class="card-content">
+                        <h3>Roundoff</h3>
+                        <a href="roundoff.html" class="card-btn" aria-label="Open Roundoff project">→</a>
+                    </div>
+                </div>
+
+                <div class="card games" data-date="2024-01-01" data-title="Project 3">
+                    <div class="card-placeholder"></div>
+                    <div class="card-content">
+                        <h3>Project 3</h3>
+                        <a href="404.html" class="card-btn">→</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="empty-state" id="empty-state" style="display:none;">
+                <p>No projects match your search.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Definitely_Andrew · All rights reserved</p>
+    </footer>
+
+    <script src="js/version.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function initCardAnimations() {
+            const cards = Array.from(document.querySelectorAll('.card:not(.hidden)'));
+            cards.forEach(c => c.classList.remove('visible'));
+
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    cards.forEach((card, i) => {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, i * 120);
+                    });
+                });
+            });
+        }
+
+        window.addEventListener('load', initCardAnimations);
+
+        // Re-run after filter/sort changes
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.filter-btn')) {
+                setTimeout(initCardAnimations, 30);
+            }
+        });
+        document.getElementById('sort-options')?.addEventListener('change', () => {
+            setTimeout(initCardAnimations, 30);
+        });
+    </script>
+</body>
+</html>
