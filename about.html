@@ -326,10 +326,10 @@
                     <div class="lang-item">
                         <div class="lang-header">
                             <span class="lang-name">Vietnamese</span>
-                            <span class="lang-pct">62%</span>
+                            <span class="lang-pct">48%</span>
                         </div>
                         <div class="lang-bar-bg">
-                            <div class="lang-bar-fill" style="--pct: 62%"></div>
+                            <div class="lang-bar-fill" style="--pct: 48%"></div>
                         </div>
                     </div>
 
@@ -408,6 +408,7 @@
             if (normalized.includes('youtube music') || normalized.includes('yt music')) return 'YouTube Music';
             if (normalized.includes('capcut')) return 'CapCut';
             if (normalized.includes('freeform')) return 'Freeform';
+            if (normalized.includes('freebuff')) return 'Freebuff';
             if (/\b(word|powerpoint|excel|outlook|onenote|teams|onedrive)\b/.test(normalized)
                 || normalized.includes('microsoft')) {
                 return name;
@@ -589,7 +590,7 @@
 
         function handleLanyardPresence(presence) {
             if (!presence || !Array.isArray(presence.activities)) {
-                setActivityMessage('Discord activity', 'No activity data available.', '', '☕');
+                setActivityMessage('Discord activity', 'No data available. Sorry!', '', '☕');
                 return;
             }
             showActivity(presence.activities, presence.spotify);
