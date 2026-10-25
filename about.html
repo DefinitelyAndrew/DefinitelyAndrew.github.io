@@ -409,7 +409,8 @@
             if (normalized.includes('capcut')) return 'CapCut';
             if (normalized.includes('freeform')) return 'Freeform';
             if (normalized.includes('freebuff')) return 'Freebuff';
-            if (/\b(word|powerpoint|excel|outlook|onenote|teams|onedrive)\b/.test(normalized)
+            if (normalized.includes('pycharm')) return 'PyCharm CE';
+            if (/\b(word|powerpoint|excel|teams)\b/.test(normalized)
                 || normalized.includes('microsoft')) {
                 return name;
             }
