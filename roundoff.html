@@ -29,6 +29,20 @@
         .feature p { color: var(--muted); font-size: 13px; line-height: 1.65; }
         .status { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; color: #87f5d1; font-size: 12px; font-weight: 600; }
         .status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #34d399; box-shadow: 0 0 12px #34d399; }
+        .btn-redirect {
+          display: inline-block;
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          border-radius: 5px;
+          font-family: sans-serif;
+          font-weight: bold;
+          text-align: center;
+        }
+        .btn-redirect:hover {
+          background-color: #0056b3; 
+        }
         @media (max-width: 640px) { .roundoff-page { padding: 24px 16px 64px; } .roundoff-hero { min-height: 300px; padding: 34px 26px; } .features { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -49,7 +63,10 @@
         </div>
         </section>
         <section class="project-section"><h2>My future plans</h2><p>Since it is now only compatible with MacOS, I am planning to release it to iPadOS, Windows, visionOS and iOS.</p></section>
-        <a href="https://drive.google.com/file/d/169NLFjggn3KgM4rLUZeWK_k4g6HdsJrL/view?usp=sharing" target="_blank" class="my-button">Download (Mac)</a>
+        <a href="https://drive.google.com/file/d/169NLFjggn3KgM4rLUZeWK_k4g6HdsJrL/view?usp=sharing" target="_blank" class="btn-redirect">
+          Download (Mac)
+        </a>
+
     </main>
     <footer><p>© 2026 Definitely_Andrew · All rights reserved</p></footer>
     <script src="js/version.js"></script>
